@@ -1,10 +1,13 @@
 import React from 'react';
-import { Header } from '..';
+import { Categories, Header, Recommended, TrendingPost } from '..';
 
 const Homepage = () => {
 	return (
 		<div>
 			<Header />
+			<Categories />
+			<TrendingPost />
+			<Recommended />
 		</div>
 	);
 };

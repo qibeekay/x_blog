@@ -1,3 +1,4 @@
+import { url } from 'inspector';
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
@@ -11,7 +12,19 @@ const config: Config = {
 		extend: {
 			colors: {
 				dark: '#0C0C0C',
+				light: '#F8F7F4',
 			},
+		},
+		screens: {
+			xs: '350px',
+			sm: '480px',
+			ms: '641px',
+			md: '768px',
+			lg: '976px',
+			xl: '1440px',
+		},
+		backgroundImage: {
+			hero: "url('/bg.jpg')",
 		},
 	},
 	plugins: [],

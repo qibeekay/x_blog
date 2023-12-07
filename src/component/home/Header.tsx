@@ -3,7 +3,7 @@ import { HeroSection, Navbar } from '..';
 
 const Header = () => {
 	return (
-		<header>
+		<header className=''>
 			<Navbar />
 			<HeroSection />
 		</header>

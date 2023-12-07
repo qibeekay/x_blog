@@ -1,3 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@property --offset {
+	syntax: '<length>';
+	inherits: false;
+	initial-value: 1px;
+}
+
+.hover-underline {
+	position: relative;
+	display: inline-block;
+}
+
+.hover-underline::before {
+	content: '';
+	position: absolute;
+	bottom: 2px; /* adjust this value to position the underline */
+	left: 0;
+	width: 0;
+	height: 2px; /* adjust this value to control the underline thickness */
+	background-color: #0c0c0c; /* adjust this value to set the underline color */
+	transition: width 0.3s ease-in-out; /* adjust the transition speed if desired */
+}
+
+.hover-underline:hover::before {
+	width: 100%;
+}
+
+.a {
+	color: inherit;
+	text-underline-offset: var(--offset, 3px);
+	text-decoration: underline 2px white;
+	transition: --offset 400ms, text-decoration-color 400ms;
+}
+
+.a:hover,
+.a:focus {
+	--offset: 6px;
+	text-decoration-color: #7b00d3;
+	/* color: #4b6bfb; */
+}
+
+@supports not (background: paint(something)) {
+	.a {
+		transition: text-underline-offset 400ms, text-decoration-color 400ms;
+	}
+
+	.a:hover,
+	.a:focus {
+		text-underline-offset: 0.4em;
+	}
+}

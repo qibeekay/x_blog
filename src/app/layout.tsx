@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 // import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
+import { Footer } from '@/component';
 
 // const inter = Inter({ subsets: ['latin'] });
 const myFont = localFont({
@@ -21,7 +22,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className={myFont.className}>{children}</body>
+			<body className={myFont.className}>
+				{children}
+				<Footer />
+			</body>
 		</html>
 	);
 }
